@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
+Route::view('/', 'welcome');
 require __DIR__.'/auth.php';
+
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', \App\Http\Controllers\DashboardController::class)->name('dashboard');
+
+    Route::post('company/data-table-filter', [\App\Http\Controllers\CompanyController::class, 'dataTableFilter'])->name('company.dataTableFilter');
+    Route::resource('company', \App\Http\Controllers\CompanyController::class);
+
+    Route::get('employee', \App\Http\Controllers\DashboardController::class)->name('employee.index');
+});
