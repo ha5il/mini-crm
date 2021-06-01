@@ -31,8 +31,6 @@ class ListEmployee extends Component
                 ->orderBy('id', 'desc')
                 ->paginate(10),
         ]);
-        // ->extends('backend.layout', ['hasLiveWire' => true])
-        // ->section('body-content');
     }
 
     public function deleteEmployee($id)
