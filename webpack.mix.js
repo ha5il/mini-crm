@@ -15,4 +15,6 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('postcss-import'),
     require('tailwindcss'),
     require('autoprefixer'),
-]);
+])
+.js('resources/js/livewire-events.js', 'public/js')
+.copy('resources/js/swt-alrt.min.js', 'public/js/swt-alrt.min.js');

@@ -22,5 +22,8 @@ Route::middleware('auth')->group(function () {
     Route::post('company/data-table-filter', [\App\Http\Controllers\CompanyController::class, 'dataTableFilter'])->name('company.dataTableFilter');
     Route::resource('company', \App\Http\Controllers\CompanyController::class);
 
-    Route::get('employee', \App\Http\Controllers\DashboardController::class)->name('employee.index');
+    Route::group(['prefix' => 'employee', 'as' => 'employee.'], function () {
+        Route::get('/', \App\Http\Livewire\Employee\ListEmployee::class)->name('index');
+        Route::get('{id}/edit', \App\Http\Livewire\Employee\EditEmployee::class)->name('edit');
+    });
 });

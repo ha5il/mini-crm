@@ -10,7 +10,7 @@ class Employee extends Model
     use HasFactory;
 
     public $fillable = [
-        'first_name', 'last_name', 'email', 'phone',
+        'first_name', 'last_name', 'email', 'phone', 'company_id',
     ];
 
     /**
@@ -19,5 +19,18 @@ class Employee extends Model
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+
+    /**
+     * Attributes
+     */
+    public function getFullNameAttribute()
+    {
+        return "$this->first_name $this->last_name";
+    }
+
+    public function getRegisteredAtAttribute()
+    {
+        return $this->created_at->setTimeZone('GMT+5:45');
     }
 }

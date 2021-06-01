@@ -1,4 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/livewire-events.js": "/js/livewire-events.js",
+    "/css/app.css": "/css/app.css",
+    "/js/swt-alrt.min.js": "/js/swt-alrt.min.js"
 }

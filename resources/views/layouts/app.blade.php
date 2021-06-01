@@ -33,11 +33,13 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="px-4">
                 {{ $slot }}
             </main>
         </div>
         @livewireScripts
         @stack('scripts')
+        <script src="{{mix('js/livewire-events.js')}}"></script>
+        <script src="{{asset('js/swt-alrt.min.js')}}"></script>
     </body>
 </html>
