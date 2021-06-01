@@ -13,19 +13,34 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('text.dashboard') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('company.index')" :active="request()->routeIs('company.index')">
-                        {{ __('Company') }}
+                        {{ __('text.company') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee.index')">
-                        {{ __('Employee') }}
+                        {{ __('text.employee') }}
                     </x-nav-link>
                 </div>
+                @if(!\App::isLocale('np'))
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('switchLanguage').'?lang=np'">
+                        नेपाली
+                    </x-nav-link>
+                </div>
+                @endif
+                @if(!\App::isLocale('en'))
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('switchLanguage').'?lang=en'">
+                        English
+                    </x-nav-link>
+                </div>
+                @endif
+
             </div>
 
             <!-- Settings Dropdown -->
@@ -51,7 +66,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('text.logout') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

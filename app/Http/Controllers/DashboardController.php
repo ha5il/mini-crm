@@ -13,8 +13,8 @@ class DashboardController extends Controller
     {
         return view('dashboard', [
             'countCards' => [
-                ['text' => 'Companies', 'count' => Company::count(), 'route' => route('company.index'), 'icon' => 'fas fa-building'],
-                ['text' => 'Employees', 'count' => Employee::count(), 'route' => route('employee.index'), 'icon' => 'fa fa-users'],
+                ['text' => trans('text.company'), 'count' => Company::count(), 'route' => route('company.index'), 'icon' => 'fas fa-building'],
+                ['text' => trans('text.employee'), 'count' => Employee::count(), 'route' => route('employee.index'), 'icon' => 'fa fa-users'],
             ]
         ]);
     }

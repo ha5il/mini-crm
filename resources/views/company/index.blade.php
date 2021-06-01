@@ -9,15 +9,15 @@
     @endpush
     
     <x-button>
-        <a href="{{route('company.create')}}">Add New Company</a>
+        <a href="{{route('company.create')}}">{{__('text.add_company')}}</a>
     </x-button>
 
     <table id="company_table">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Action</th>
+                <th>{{__('text.name')}}</th>
+                <th>{{__('text.email')}}</th>
+                <th></th>
             </tr>
         </thead>
     </table>
@@ -58,7 +58,7 @@
         });
 
         function deleteCompany(company_id) {
-            if (!confirm('Are you sure to delete this company?')) {
+            if (!confirm('{{__("text.confirm_company_delete")}}')) {
                 return;
             }
             $.ajax({

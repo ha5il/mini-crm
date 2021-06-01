@@ -20,5 +20,5 @@ public *(Do run storage:link)*
 register *(Used Laravel breeze:install. Since laravel 8 we have default theme as tailwind so have used tailwind instead of bootstrap.)*
 - [X] Use Datatables.net library to show table – with our without server-side rendering *(Done as server side for company resource)*
 - [X] Email notification: send email whenever new company is entered (use Mailgun or Mailtrap). Use laravel scheduler to send email *(Done as database queue, do update on .env and run queue:work using scheduler app (on server))*
-- [ ] Make the project multi-language (using resources/lang folder)
+- [X] Make the project multi-language (using resources/lang folder) *(Done for some pages after login)*
 - [X] Basic testing with phpunit

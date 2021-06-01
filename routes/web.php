@@ -27,3 +27,9 @@ Route::middleware('auth')->group(function () {
         Route::get('{id}/edit', \App\Http\Livewire\Employee\EditEmployee::class)->name('edit');
     });
 });
+
+Route::get('switchLanguage', function () {
+    session()->put('lang', request()->lang);
+    // dd(request()->lang);
+    return redirect()->back();
+})->name('switchLanguage');

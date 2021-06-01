@@ -3,20 +3,20 @@
         @csrf
         @method('put')
         <div>
-            <x-label for="name" :value="__('Name')" />
+            <x-label for="name" :value="__('text.name')" />
             <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="$company->name" required
                 autofocus />
             @error('name')<span class="text-red-600">{{$message}}</span>@enderror
         </div>
 
         <div class="mt-4">
-            <x-label for="email" :value="__('Email')" />
+            <x-label for="email" :value="__('text.email')" />
             <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$company->email" />
             @error('email')<span class="text-red-600">{{$message}}</span>@enderror
         </div>
 
         <div class="mt-4">
-            <x-label for="logo" :value="__('Logo')" />
+            <x-label for="logo" :value="__('text.logo')" />
             <x-input id="logo" class="block mt-1 w-full" type="file" name="logo" />
             @error('logo')<span class="text-red-600">{{$message}}</span>@enderror
         </div>
@@ -28,7 +28,7 @@
         <div class="flex items-center justify-end mt-4">
 
             <x-button class="ml-4">
-                {{ __('Update') }}
+                {{ __('text.update') }}
             </x-button>
         </div>
     </form>

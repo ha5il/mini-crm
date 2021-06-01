@@ -2,7 +2,7 @@
     <div class="flex flex-wrap mb-2">
         <div class="sm:w-1/2 md:w-1/4 px-1">
             <x-button>
-                <a href="{{route('employee.edit', 'new')}}">Add Employee</a>
+                <a href="{{route('employee.edit', 'new')}}">{{__('text.add_employee')}}</a>
             </x-button>
         </div>
         <div class="sm:w-1/2 md:w-1/4 px-1">
@@ -14,7 +14,7 @@
         <div class="my-2 overflow-x-auto">
         <div class="py-2 align-middle inline-block min-w-full">
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                <x-table :headings="['employee', 'company', 'email', 'phone', 'registered', '']">
+                <x-table :headings="[trans('text.employee'), trans('text.company'), trans('text.email'), trans('text.phone'), trans('text.registered'), '']">
                     @forelse ($employees as $employee)
                     <x-table-row>
                         <x-table-cell>{{$employee->full_name}}</x-table-cell>
