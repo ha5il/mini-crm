@@ -15,7 +15,7 @@ class CompanyAndEmployeesSeeder extends Seeder
      */
     public function run()
     {
-        Company::factory(20)
+        Company::factory(44)
             ->create()
             ->each(function($company) {
                 Employee::factory(random_int(5, 20))
