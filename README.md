@@ -18,7 +18,7 @@ public *(Do run storage:link)*
 - [X] Use Laravel’s pagination for showing Companies/Employees list, 10 entries per page *(Company has datable so pagination can be changed from client side, employee has default 10 items per_page)*
 - [x] Use Laravel make:auth as default Bootstrap-based design theme, but remove ability to
 register *(Used Laravel breeze:install. Since laravel 8 we have default theme as tailwind so have used tailwind instead of bootstrap.)*
-- [ x Use Datatables.net library to show table – with our without server-side rendering *(Done as server side for company resource)*
-- [ ] Email notification: send email whenever new company is entered (use Mailgun or Mailtrap). Use laravel scheduler to send email
+- [X] Use Datatables.net library to show table – with our without server-side rendering *(Done as server side for company resource)*
+- [X] Email notification: send email whenever new company is entered (use Mailgun or Mailtrap). Use laravel scheduler to send email *(Done as database queue, do update on .env and run queue:work using scheduler app (on server))*
 - [ ] Make the project multi-language (using resources/lang folder)
 - [ ] Basic testing with phpunit
